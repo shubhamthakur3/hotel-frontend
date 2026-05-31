@@ -1,0 +1,429 @@
+/* ─────────────────────────────────────────────────────────
+   Hotel Frontend — Staff Dashboard Layout & Styles
+   ───────────────────────────────────────────────────────── */
+
+.staff-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--surface-soft);
+  color: var(--text-primary);
+}
+
+/* ── Sidebar ─────────────────────────────────────────── */
+.staff-sidebar {
+  width: 260px;
+  background-color: var(--bg-dark);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  transition: width var(--transition-base);
+}
+
+.staff-sidebar-header {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 0 var(--space-6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.staff-sidebar-logo-text {
+  font-weight: 700;
+  font-size: var(--font-lg);
+  letter-spacing: 0.5px;
+}
+
+.staff-sidebar-nav {
+  flex: 1;
+  padding: var(--space-4) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.staff-sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-6);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--font-sm);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  border-left: 3px solid transparent;
+  cursor: pointer;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+
+.staff-sidebar-item:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.staff-sidebar-item.active {
+  color: var(--accent-gold);
+  background-color: rgba(255, 255, 255, 0.08);
+  border-left: 3px solid var(--accent-gold);
+}
+
+.staff-sidebar-footer {
+  padding: var(--space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.staff-sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2);
+}
+
+.staff-sidebar-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--accent-gold);
+  color: var(--bg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.staff-sidebar-username {
+  font-size: var(--font-sm);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 130px;
+}
+
+.staff-sidebar-role {
+  font-size: var(--font-xs);
+  color: var(--accent-gold);
+  display: block;
+}
+
+/* ── Main Panel ──────────────────────────────────────── */
+.staff-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.staff-header {
+  height: 70px;
+  background-color: var(--surface-card);
+  border-bottom: 1px solid var(--border-default);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-8);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+}
+
+.staff-header-title {
+  font-size: var(--font-lg);
+  font-weight: 600;
+}
+
+.staff-header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.staff-body {
+  flex: 1;
+  padding: var(--space-8);
+  overflow-y: auto;
+}
+
+/* ── KPI Grid & Stat Cards ───────────────────────────── */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.stat-card {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-card-info h4 {
+  font-size: var(--font-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+  margin-bottom: var(--space-1);
+}
+
+.stat-card-value {
+  font-size: var(--font-2xl);
+  font-weight: 700;
+}
+
+.stat-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background-color: var(--surface-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+}
+
+.stat-card-icon.accent {
+  background-color: #fff0f3;
+  color: var(--primary);
+}
+
+/* ── Analytics & Charts Section ──────────────────────── */
+.analytics-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.chart-card {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.chart-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-6);
+}
+
+.chart-container {
+  height: 300px;
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  .analytics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Data Tables & Management Layouts ────────────────── */
+.table-card {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.table-header {
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--border-default);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: var(--font-sm);
+}
+
+.data-table th {
+  padding: var(--space-4) var(--space-6);
+  background-color: var(--surface-soft);
+  font-weight: 600;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-default);
+}
+
+.data-table td {
+  padding: var(--space-4) var(--space-6);
+  border-bottom: 1px solid var(--border-default);
+  vertical-align: middle;
+}
+
+.data-table tbody tr:hover {
+  background-color: var(--surface-soft);
+}
+
+/* ── Inventory Calendar Grid ─────────────────────────── */
+.inventory-control-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-6);
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.inventory-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--space-2);
+  margin-bottom: var(--space-8);
+}
+
+.calendar-day-header {
+  text-align: center;
+  font-size: var(--font-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  padding: var(--space-2) 0;
+}
+
+.calendar-day-cell {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+  min-height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.calendar-day-cell:hover {
+  border-color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.calendar-day-number {
+  font-size: var(--font-xs);
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.calendar-day-stats {
+  margin-top: var(--space-2);
+}
+
+.calendar-day-stat {
+  font-size: var(--font-xs);
+  display: block;
+}
+
+.calendar-day-stat.closed {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.calendar-day-stat.price {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* ── Modal & Side Drawer Forms ───────────────────────── */
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: var(--z-modal-backdrop);
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 480px;
+  max-width: 100%;
+  background-color: var(--surface-card);
+  z-index: var(--z-modal);
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  flex-direction: column;
+  animation: slideInRight var(--transition-base);
+}
+
+.drawer-header {
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--border-default);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drawer-body {
+  flex: 1;
+  padding: var(--space-6);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.drawer-footer {
+  padding: var(--space-5) var(--space-6);
+  border-top: 1px solid var(--border-default);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+}
+
+/* ── Responsive adjustments for Sidebar ──────────────── */
+@media (max-width: 768px) {
+  .staff-layout {
+    flex-direction: column;
+  }
+  .staff-sidebar {
+    width: 100%;
+    height: auto;
+  }
+  .staff-sidebar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: var(--space-2);
+  }
+  .staff-sidebar-item {
+    padding: var(--space-2) var(--space-4);
+    border-left: none;
+    border-bottom: 2px solid transparent;
+  }
+  .staff-sidebar-item.active {
+    border-left: none;
+    border-bottom: 2px solid var(--accent-gold);
+  }
+  .staff-header {
+    padding: 0 var(--space-4);
+  }
+  .staff-body {
+    padding: var(--space-4);
+  }
+}
